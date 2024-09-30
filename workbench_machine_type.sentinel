@@ -1,0 +1,31 @@
+import "tfplan/v2" as tfplan
+
+# Restrict the machinet type  
+approved_machine_types = [
+  "n1-standard-4",
+  "n1-standard-8",
+  "n2-standard-4",
+  "n1-standard-1",
+]
+
+# Define a rule to check if the machine type is allowed
+#allow_machine_type = rule {
+#    tfplan.resource_changes["module.workbench_instance.google_workbench_instance.vertex_ai_workbench"].change.after.gce_setup.machine_type in approved_machine_types
+#}
+
+allow_machine_type = false
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_workbench_instance" ){
+        for rc.change.after.gce_setup as gs {
+            if(gs.machine_type in approved_machine_types){
+                allow_machine_type = true
+            }
+        }      
+    }
+}
+
+
+# Enforce the policy
+main = rule {
+    allow_machine_type
+}

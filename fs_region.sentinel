@@ -1,0 +1,15 @@
+import "tfplan/v2" as tfplan
+
+set_region = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_vertex_ai_featurestore"){
+       if(rc.change.after.region not in ["us-central1", "europe-west1"]){
+         set_region = false
+       }
+    }
+}
+
+# Main rule to Enforce a policy to ensure region should be in expected region list
+main = rule{
+  set_region
+}

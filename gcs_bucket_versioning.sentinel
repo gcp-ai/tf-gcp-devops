@@ -1,0 +1,13 @@
+import "tfplan/v2" as tfplan
+
+check_versioning = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_storage_bucket" and rc.change.after contains "versioning" and rc.change.after.versioning[0].enabled is false){
+       check_versioning = false
+    }
+}
+
+# Main rule to ensure that bucket versioning should be enabled
+main = rule{
+  check_versioning
+}

@@ -1,0 +1,23 @@
+import "tfplan/v2" as tfplan
+
+expiration = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_bigquery_dataset"){
+       
+       if(rc.change.after contains "default_table_expiration_ms"){
+        if(rc.change.after.default_table_expiration_ms == null){
+           expiration = false
+        }else{
+          if(rc.change.after.default_table_expiration_ms < 1){
+             expiration = false
+          }
+        }
+       }
+       
+    }
+}
+
+# Main rule to Enforce a policy to ensure all datasets have an expiration date set to avoid stale or unneeded datasets that accumulate cost over time.
+main = rule{
+  expiration
+}

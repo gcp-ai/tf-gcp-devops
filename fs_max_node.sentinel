@@ -1,0 +1,21 @@
+import "tfplan/v2" as tfplan
+
+max_node = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_vertex_ai_featurestore"){
+       if(length(rc.change.after.online_serving_config[0].scaling) > 0){
+         for rc.change.after.online_serving_config[0].scaling as sc {
+            if(sc contains "max_node_count"){
+               if(sc.max_node_count > 5){
+                  max_node = false
+               }
+            }
+         }
+       }
+    }
+}
+
+# For cost management max nodes should not be more than 5
+main = rule{
+  max_node
+}

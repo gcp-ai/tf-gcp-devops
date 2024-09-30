@@ -1,0 +1,16 @@
+# restrict-machine-type.sentinel
+
+import "tfplan/v2" as tfplan
+
+# Restrict the machine type to e2-small
+machine_type_allowed = ["e2-micro","e2-small"]
+
+# Define a rule to check if the machine type is allowed
+allow_machine_type = rule {
+     tfplan.resource_changes["module.gce.google_compute_instance.vm_instance"].change.after.machine_type in machine_type_allowed
+}
+
+# Enforce the policy
+main = rule {
+    allow_machine_type
+}

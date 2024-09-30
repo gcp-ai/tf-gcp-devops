@@ -1,0 +1,17 @@
+import "tfplan/v2" as tfplan
+
+machine_type = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_sql_database_instance"){
+       
+       if(rc.change.after.settings.tier not in ["db-f1-micro"]){
+        machine_type = false
+       }
+       
+    }
+}
+
+# Main rule to Enforce a policy to ensure machine type should be "db-f1-micro"
+main = rule{
+  machine_type
+}

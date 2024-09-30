@@ -1,0 +1,13 @@
+import "tfplan/v2" as tfplan
+
+storage_class = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_storage_bucket" and rc.change.after contains "storage_class" and rc.change.after.storage_class not in ["STANDARD", "NEARLINE"]){
+       storage_class = false
+    }
+}
+
+# Main rule to ensure that storage class should be STANDARD or NEARLINE
+main = rule{
+  storage_class
+}

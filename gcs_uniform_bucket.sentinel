@@ -1,0 +1,13 @@
+import "tfplan/v2" as tfplan
+
+check_access = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_storage_bucket" and rc.change.after contains "uniform_bucket_level_access" and rc.change.after.uniform_bucket_level_access is false){
+       check_access = false
+    }
+}
+
+# Main rule to ensure that all google_storage_bucket resources have uniform_bucket_level_access set to true
+main = rule{
+  check_access
+}

@@ -1,0 +1,36 @@
+import "tfplan/v2" as tfplan
+ 
+required_labels = {
+  "cost-center" = "string",
+  "env" = "string",
+}
+
+workbench_instances = filter tfplan.resource_changes as rc where rc.type == "google_notebooks_instance" and rc.change.after.labels is not null
+
+all workbench_instances as instance {
+  all required_labels as key, val {
+    assert instance.change.after.labels[key] is not null, "The label '${key}' must be set on all Vertex AI Workbench instances."
+  }
+}
+
+# allow_machine_type = false
+# for tfplan.resource_changes as _, rc {
+#     if(rc.type == "google_workbench_instance" and rc.change.after.labels is not null){
+#         # for rc.change.after.gce_setup as gs {
+#         #     if(gs.machine_type in approved_machine_types){
+#         #         allow_machine_type = true
+#         #     }
+#         # }   
+#         all workbench_instances as instance {
+#             all required_labels as key, val {
+#                 assert instance.change.after.labels[key] is not null, "The label '${key}' must be set on all Vertex AI Workbench instances."
+#             }
+#         }   
+#     }
+# }
+
+
+# Enforce the policy
+main = rule {
+    required_labels
+}

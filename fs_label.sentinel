@@ -1,0 +1,17 @@
+import "tfplan/v2" as tfplan
+
+set_label = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_vertex_ai_featurestore"){
+       if(rc.change.after.labels contains "environment" and rc.change.after.labels contains "cost_center" and rc.change.after.labels contains "owner"){
+         
+       }else{
+          set_label = false
+       }
+    }
+}
+
+# Enforce that labels such as environment, owner, or cost_center are applied to Vertex AI Feature Groups to ensure cost tracking and resource management.
+main = rule{
+  set_label
+}

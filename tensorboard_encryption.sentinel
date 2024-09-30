@@ -1,0 +1,22 @@
+import "tfplan/v2" as tfplan
+
+set_encyption = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_vertex_ai_tensorboard"){
+       if(length(rc.change.after.encryption_spec) < 1){
+         set_encyption = false
+       }else{
+        if(rc.change.after.encryption_spec[0].kms_key_name is not null){
+          
+        }else{
+            set_encyption = false
+        }
+       }
+       
+    }
+}
+
+# Ensure that all Tensorboard resources are encrypted using Customer-Managed Encryption Keys (CMEK)
+main = rule{
+  set_encyption
+}

@@ -1,0 +1,19 @@
+import "tfplan/v2" as tfplan
+
+backup_enabled = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_sql_database_instance"){
+       
+       if(rc.change.after.settings[0].backup_configuration[0].enabled is true){
+        
+       }else{
+         backup_enabled = false
+       }
+       
+    }
+}
+
+# Main rule to Enforce a policy to ensure sql backup should be enabled
+main = rule{
+  backup_enabled
+}

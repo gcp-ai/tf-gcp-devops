@@ -1,0 +1,14 @@
+import "tfplan/v2" as tfplan
+
+
+public_access = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_storage_bucket_iam_member" and ("allUsers" in rc.change.after.member or "allAuthenticatedUsers" in rc.change.after.member)){
+       public_access = false
+    }
+}
+
+# Main rule to ensure that bucket should not be publically accesible
+main = rule{
+  public_access
+}

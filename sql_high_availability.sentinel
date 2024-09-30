@@ -1,0 +1,19 @@
+import "tfplan/v2" as tfplan
+
+high_availability = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_sql_database_instance"){
+       
+       if(rc.change.after.settings[0].availability_type is "REGIONAL"){
+        
+       }else{
+         high_availability = false
+       }
+       
+    }
+}
+
+# Main rule to Enforce a policy to ensure High Availability for Instance
+main = rule{
+  high_availability
+}

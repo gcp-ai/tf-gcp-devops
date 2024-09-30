@@ -1,0 +1,22 @@
+import "tfplan/v2" as tfplan
+
+public_access_prevent = true
+for tfplan.resource_changes as _, rc {
+    if(rc.type == "google_bigquery_dataset" and rc.change.after contains "access"){
+       
+       for rc.change.after.access as ac {
+        if(ac.role == "READER" and ac contains "special_group"){
+          if(ac.special_group is "allUsers" or ac.special_group is "allAuthenticatedUsers"){
+             public_access_prevent = false
+          }
+        }
+       }
+       
+       
+    }
+}
+
+# Main rule to ensure that all google_storage_bucket resources have uniform_bucket_level_access set to true
+main = rule{
+  public_access_prevent
+}
