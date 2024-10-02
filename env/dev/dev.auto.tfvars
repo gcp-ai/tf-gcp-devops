@@ -180,7 +180,7 @@ gcs_buckets = [
     retention_period            = 1
     versioning                  = true
   },
-  {
+  { 
     bucket_name                 = "tf-jobload-backup"
     force_destroy               = true
     uniform_bucket_level_access = true
