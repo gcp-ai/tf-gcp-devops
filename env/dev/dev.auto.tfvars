@@ -187,7 +187,7 @@ gcs_buckets = [
     storage_class               = "STANDARD"
     retention_period            = 1
     versioning                  = true
-  } 
+  }
 ] 
 
 
