@@ -8,6 +8,11 @@ resource "google_storage_bucket" "default" {
 
   uniform_bucket_level_access = var.uniform_bucket_level_access
 
+
+  versioning {
+    enabled = var.versioning
+  }
+
   retention_policy {
     is_locked        = false
     retention_period = var.retention_period

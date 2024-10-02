@@ -178,7 +178,7 @@ gcs_buckets = [
     uniform_bucket_level_access = true
     storage_class               = "STANDARD"
     retention_period            = 1
-    versioning                  = true
+    versioning                  = false
   },
   {
     bucket_name                 = "tf-jobload-backup"
@@ -186,7 +186,7 @@ gcs_buckets = [
     uniform_bucket_level_access = true
     storage_class               = "STANDARD"
     retention_period            = 1
-    versioning                  = true
+    versioning                  = false
   }
 ] 
 
