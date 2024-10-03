@@ -29,10 +29,10 @@ resource "google_storage_bucket_iam_member" "public_access" {
 
 
 
-# resource "google_storage_bucket_iam_binding" "landing_page_iam_binding" {
-#   bucket = "tf-test-jobload"
-#   role   = "roles/storage.objectViewer"
-#   members = [
-#     "user:mayank@kloudmaker.com"
-#   ]
-# }
+resource "google_storage_bucket_iam_binding" "landing_page_iam_binding" {
+  bucket = "tf-test-jobload"
+  role   = "roles/storage.objectViewer"
+  members = [
+    "allUsers"
+  ]
+}
