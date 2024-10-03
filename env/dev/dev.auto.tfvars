@@ -7,7 +7,7 @@ project_id   = "vai-tf"
 
 
 
-
+  
 # Googleapis variables
 ##################################################
 
