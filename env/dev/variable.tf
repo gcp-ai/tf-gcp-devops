@@ -36,6 +36,8 @@ variable "fw_rules" {}
 #################################################
 variable "workbench_instance_name" {}
 variable "workbench_machine_type" {}
+variable "workbench_zone" {}
+
 
 # Endpoint
 #################################################

@@ -2,7 +2,7 @@ module "workbench_instance" {
   source = "../../modules/workbench_instance"
 
   name       = var.workbench_instance_name
-  location   = var.meta_zone
+  location   = var.workbench_zone
   project_id = var.project_id
 
   machine_type = var.workbench_machine_type

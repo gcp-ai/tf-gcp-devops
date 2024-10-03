@@ -120,6 +120,7 @@ fw_rules = [{
 #################################################
 workbench_instance_name = "tf-workbench-instance"
 workbench_machine_type  = "n1-standard-1"
+workbench_zone  = "us-central1-c"
 
 
 
