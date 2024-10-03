@@ -2,7 +2,6 @@
 #################################################
 
 variable "meta_env" {}
-variable "meta_project_prefix" {}
 variable "meta_region" {}
 variable "meta_zone" {}
 variable "meta_sa_name" {}

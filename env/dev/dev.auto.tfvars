@@ -1,11 +1,9 @@
 # Project variables
-meta_project_prefix = "mail201"
 meta_region  = "us-central1"
 meta_zone    = "us-central1-a"
 meta_sa_name = "dev1-sa"
 project      = "vai-tf"
 project_id   = "vai-tf"
-
 
 
 # Googleapis variables
@@ -52,7 +50,6 @@ vpc_peering = {
     address_type  = "INTERNAL"
     purpose       = "VPC_PEERING"  
 }
-
 
 
 #Firewall rules
@@ -139,7 +136,7 @@ endpoint_binding_members = "serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccou
 #################################################
 endpoint_member_role = "roles/aiplatform.viewer"
 endpoint_member      = "serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.com"
-# endpoint_member = "serviceAccount:dev1-sa@vai-dev1.iam.gserviceaccount.com"
+
 
 # EndPoint Policy 
 #################################################
@@ -156,7 +153,6 @@ metadata_name = "tf-metdata-store"
 #################################################
 workbench_policy_role    = "roles/viewer"
 workbench_policy_members = ["serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.com"]
-# workbench_policy_members = ["user:dev@phone.email"]
 
 
 # Workbench Member 
@@ -164,11 +160,11 @@ workbench_policy_members = ["serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceacco
 workbench_member_role = "roles/notebooks.viewer"
 workbench_member      = "serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.com"
 
+
 # Workbench binding 
 #################################################
 workbench_binding_role    = "roles/viewer"
 workbench_binding_members = ["serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.com"]
-# workbench_binding_members = ["user:dev@phone.email"]
 
 
 # GCS
@@ -247,7 +243,8 @@ bigquery_dataset = {
   table_id                    = "job_load_table"
 } 
 
-# Cloud SQL #
+
+# Cloud SQL Instance #
 #################################################
 cloudsql_instances = [{
   name                = "tf-jobload-instance"
@@ -262,7 +259,8 @@ cloudsql_instances = [{
 ]
 
 
-
+# Cloud SQL DB #
+#################################################
 cloudsql_databases = [{
   name      = "tf_jobload_db"
   instance  = "tf-jobload-instance"
@@ -270,12 +268,15 @@ cloudsql_databases = [{
   }
 ]
 
+
+# Cloud SQL Users #
+#################################################
+
 cloudsql_users = [{
   name     = "root"
   password = "Ey75qB7Dwyo0fa"
   instance = "tf-jobload-instance"
   host     = ""
-
 }]
 
 
