@@ -3,7 +3,7 @@ import "tfplan/v2" as tfplan
 
 public_access = true
 for tfplan.resource_changes as _, rc {
-    if(rc.type == "google_storage_bucket_iam_member" and ("allUsers" in rc.change.after.member or "allAuthenticatedUsers" in rc.change.after.member)){
+    if(rc.type == "google_storage_bucket_iam_binding" and ("allUsers" in rc.change.after.members or "allAuthenticatedUsers" in rc.change.after.members)){
        public_access = false
     }
 }

@@ -243,7 +243,7 @@ bigquery_dataset = {
   delete_contents_on_destroy = true
   # (1000*60*60*24*7) for 7 days
   default_table_expiration_ms = 604800000
-  location                    = "us-central1" 
+  location                    = "asia-south1" 
   table_id                    = "job_load_table"
 } 
 
