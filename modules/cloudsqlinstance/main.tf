@@ -11,7 +11,7 @@ resource "google_sql_database_instance" "default" {
     tier              = var.tier
     activation_policy = var.activation_policy
     disk_type         = var.disk_type
-    availability_type = "REGIONAL"
+    # availability_type = "REGIONAL"
     ip_configuration {
 
       ipv4_enabled                                  = var.ipv4_enabled

@@ -7,7 +7,7 @@ resource "google_vertex_ai_tensorboard" "tensorboard" {
     "key2" : "value2"
   }
   region       = var.region
-  encryption_spec {
-    kms_key_name = "kms-name"
-  }
+  # encryption_spec {
+  #   kms_key_name = "kms-name"
+  # }
 }
