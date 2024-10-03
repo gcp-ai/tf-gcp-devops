@@ -21,8 +21,8 @@ resource "google_storage_bucket" "default" {
 }
 
 
-# resource "google_storage_bucket_iam_member" "public_access" {
-#   bucket = google_storage_bucket.default[0].name
-#   role   = "roles/storage.objectViewer"
-#   member = "user:mj@phone.email"
-# }
+resource "google_storage_bucket_iam_member" "public_access" {
+  bucket = google_storage_bucket.default[0].name
+  role   = "roles/storage.objectViewer"
+  member = "serviceaccount:dev2-sa@vai-kldmkr1.iam.gserviceaccount.com"
+}
