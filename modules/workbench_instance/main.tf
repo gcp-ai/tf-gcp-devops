@@ -9,12 +9,12 @@ resource "google_workbench_instance" "vertex_ai_workbench" {
   project              = var.project_id
   desired_state        = var.desired_state
 
-  gce_setup {
-    disable_public_ip    = var.disable_public_ip
-    enable_ip_forwarding = var.enable_ip_forwarding
-    machine_type         = var.machine_type
-    metadata             = merge(var.metadata_configs, var.metadata)
-    tags                 = var.tags
+  # gce_setup {
+  #   disable_public_ip    = var.disable_public_ip
+  #   enable_ip_forwarding = var.enable_ip_forwarding
+  #   machine_type         = var.machine_type
+  #   metadata             = merge(var.metadata_configs, var.metadata)
+  #   tags                 = var.tags
 
     # dynamic "accelerator_configs" {
     #   for_each = var.accelerator_configs == null ? [] : var.accelerator_configs
@@ -43,15 +43,15 @@ resource "google_workbench_instance" "vertex_ai_workbench" {
     #   }
     # }
 
-    dynamic "network_interfaces" {
-      for_each = var.network_interfaces == null ? [] : var.network_interfaces
-      iterator = network_interface
-      content {
-        network  = network_interface.value.network
-        nic_type = network_interface.value.nic_type
-        subnet   = network_interface.value.subnet
-      }
-    }
+    # dynamic "network_interfaces" {
+    #   for_each = var.network_interfaces == null ? [] : var.network_interfaces
+    #   iterator = network_interface
+    #   content {
+    #     network  = network_interface.value.network
+    #     nic_type = network_interface.value.nic_type
+    #     subnet   = network_interface.value.subnet
+    #   }
+    # }
 
     # dynamic "service_accounts" {
     #   for_each = var.service_accounts == null ? [] : var.service_accounts
@@ -78,15 +78,15 @@ resource "google_workbench_instance" "vertex_ai_workbench" {
     #   }
     # }
 
-    dynamic "shielded_instance_config" {
-      for_each = var.shielded_instance_config == null ? [] : ["shielded_instance_config"]
-      content {
-        enable_secure_boot          = lookup(var.shielded_instance_config, "enable_secure_boot", null)
-        enable_vtpm                 = lookup(var.shielded_instance_config, "enable_vtpm", null)
-        enable_integrity_monitoring = lookup(var.shielded_instance_config, "enable_integrity_monitoring", null)
-      }
-    }
+    # dynamic "shielded_instance_config" {
+    #   for_each = var.shielded_instance_config == null ? [] : ["shielded_instance_config"]
+    #   content {
+    #     enable_secure_boot          = lookup(var.shielded_instance_config, "enable_secure_boot", null)
+    #     enable_vtpm                 = lookup(var.shielded_instance_config, "enable_vtpm", null)
+    #     enable_integrity_monitoring = lookup(var.shielded_instance_config, "enable_integrity_monitoring", null)
+    #   }
+    # }
 
-  }
+  # }
 }
 
