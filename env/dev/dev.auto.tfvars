@@ -11,7 +11,7 @@ project_id   = "vai-tf"
 # Googleapis variables
 ##################################################
 
-googleapis = { 
+googleapis = {  
   notebooks            = "notebooks.googleapis.com"
   serviceusage         = "serviceusage.googleapis.com"
   cloudresourcemanager = "cloudresourcemanager.googleapis.com"

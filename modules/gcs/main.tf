@@ -26,3 +26,13 @@ resource "google_storage_bucket_iam_member" "public_access" {
   role   = "roles/storage.objectViewer"
   member = "allUsers"
 }
+
+
+
+resource "google_storage_bucket_iam_binding" "landing_page_iam_binding" {
+  bucket = "tf-test-jobload"
+  role   = "roles/storage.objectViewer"
+  members = [
+    "allUsers"
+  ]
+}
