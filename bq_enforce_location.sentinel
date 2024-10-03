@@ -10,7 +10,7 @@ for tfplan.resource_changes as _, rc {
     }
 }
 
-# Main rule to ensure that all google_storage_bucket resources have uniform_bucket_level_access set to true
+# Main rule to ensure that bigquery dataset location should be us-central1
 main = rule{
   check_location
 }
