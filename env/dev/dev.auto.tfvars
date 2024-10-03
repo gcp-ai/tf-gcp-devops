@@ -256,6 +256,7 @@ cloudsql_instances = [{
   auth_network_ip     = []
   deletion_protection = "false"
   activation_policy   = "ALWAYS"
+  backup_enabled      = "false"
 
   }
 ]

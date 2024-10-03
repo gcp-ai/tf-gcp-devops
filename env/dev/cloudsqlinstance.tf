@@ -10,6 +10,7 @@ module "cloudsqlinstance" {
 
   deletion_protection = var.cloudsql_instances[0].deletion_protection
   activation_policy   = var.cloudsql_instances[0].activation_policy
+  backup_enabled   = var.cloudsql_instances[0].backup_enabled
   depends_on = [
     module.vpc, module.vpc_peering,
     module.googleapis_sqladmin

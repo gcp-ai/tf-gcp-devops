@@ -28,7 +28,7 @@ resource "google_sql_database_instance" "default" {
 
     }
     backup_configuration {
-      enabled = "true"
+      enabled = var.backup_enabled
 
     }
   }
