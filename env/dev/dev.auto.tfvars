@@ -184,7 +184,7 @@ gcs_buckets = [
     bucket_name                 = "tf-test-jobload-backup"
     force_destroy               = true
     uniform_bucket_level_access = true
-    storage_class               = "STANDARD"
+    storage_class               = "COLDLINE"
     retention_period            = 1
     versioning                  = false
   }
