@@ -44,5 +44,5 @@ variable "disk_type" {
 
 
 variable "backup_enabled" {
-  
+  type    = bool
 }
