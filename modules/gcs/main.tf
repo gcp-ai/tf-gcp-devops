@@ -19,12 +19,3 @@ resource "google_storage_bucket" "default" {
   }
 
 }
-
-
-# resource "google_storage_bucket_iam_binding" "landing_page_iam_binding" {
-#   bucket = "tf-test-jobload"
-#   role   = "roles/storage.objectViewer"
-#   members = [
-#     "allUsers"
-#   ]
-# }

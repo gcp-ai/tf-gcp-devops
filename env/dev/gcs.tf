@@ -15,16 +15,3 @@ module "gcs" {
     module.googleapis_storage
   ]
 }
-
-# module "gcs_iam" {
-#   source = "../../modules/gcs_iam"
-
-#   bucket_name = local.bucket_prof_images
-#   role        = var.bucket_role
-#   entity      = var.bucket_entity
-
-#   depends_on = [
-#     module.gcs
-#   ]
-
-# }
