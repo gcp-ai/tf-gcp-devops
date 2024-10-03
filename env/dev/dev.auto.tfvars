@@ -10,7 +10,7 @@ project_id   = "vai-tf"
 
 # Googleapis variables
 ##################################################
- 
+
 googleapis = { 
   notebooks            = "notebooks.googleapis.com"
   serviceusage         = "serviceusage.googleapis.com"
