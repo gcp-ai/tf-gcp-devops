@@ -13,6 +13,7 @@ The following GCP resources are provisioned using the Terraform configurations i
 - **VPC Peering**
 - **BigQuery Dataset**
 - **BigQuery Table**
+- **CloudSQL**
 - **Vertex AI Feature Group**
 - **Vertex AI Feature Store**
   - **Feature Store Entity**
@@ -35,7 +36,7 @@ Before you begin, ensure the following:
 - **Terraform Cloud** account with access to create workspaces.
 - **Terraform CLI** version 0.12+ installed locally.
 - Access to a **Google Cloud Project** with the necessary permissions.
-- Enabled APIs for GCP services: Compute, BigQuery, Vertex AI, Cloud Storage, etc.
+
 
 ## Terraform Cloud Setup
 
