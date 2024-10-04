@@ -1,5 +1,5 @@
 module "bigquery" {
-  source                      = "terraform-google-devops/bigquery/google"
+  source                      = "../../modules/bigquery"
   project                     = var.project_id
   dataset_id                  = var.bigquery_dataset.dataset_id
   friendly_name               = var.bigquery_dataset.friendly_name
