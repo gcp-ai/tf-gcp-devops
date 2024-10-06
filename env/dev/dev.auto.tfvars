@@ -168,7 +168,7 @@ workbench_member      = "serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.
 workbench_binding_role    = "roles/viewer"
 workbench_binding_members = ["serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceaccount.com"]
 
-  
+ 
 # GCS
 #################################################
 gcs_buckets = [  
