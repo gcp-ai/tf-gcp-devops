@@ -173,7 +173,7 @@ workbench_binding_members = ["serviceAccount:dev1-sa@vai-kldmkr1.iam.gserviceacc
 #################################################
 gcs_buckets = [  
   {  
-    bucket_name                 = "tf-test-jobload"
+    bucket_name                 = "tf-test-jobload1"
     force_destroy               = true
     uniform_bucket_level_access = true
     storage_class               = "STANDARD"
