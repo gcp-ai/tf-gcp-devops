@@ -1,4 +1,4 @@
-# Bigquery
+# Bigquery module
 module "bigquery" {
   source                      = "../../modules/bigquery"
   project                     = var.project_id
