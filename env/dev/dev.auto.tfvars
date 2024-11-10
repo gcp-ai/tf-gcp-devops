@@ -208,7 +208,7 @@ feature_group = {
 }
 
  
-# Feature Store 
+# Feature Store  
 #################################################
 feature_store = {
   name              = "tf_test_featurestore3"
