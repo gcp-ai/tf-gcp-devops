@@ -207,7 +207,7 @@ feature_group = {
   fg_entity_id_columns = "feature_id"
 }
 
-
+ 
 # Feature Store
 #################################################
 feature_store = {
