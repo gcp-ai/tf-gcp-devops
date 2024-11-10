@@ -196,7 +196,7 @@ gcs_buckets = [
 bucket_role   = "roles/storage.objectViewer"
 bucket_entity = "allUsers"
 
-
+ 
 
 # Feature Group
 #################################################
