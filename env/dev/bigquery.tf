@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 # Bigquery module 1
->>>>>>> c8d8fa719568955644560262f5507d13e9b512e2
 module "bigquery" {
   source                      = "../../modules/bigquery"
   project                     = var.project_id
