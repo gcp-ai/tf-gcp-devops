@@ -1,4 +1,4 @@
-# Meta variables s
+# Meta variables
 #################################################
 
 variable "meta_env" {}

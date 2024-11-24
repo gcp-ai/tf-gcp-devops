@@ -196,7 +196,11 @@ gcs_buckets = [
 bucket_role   = "roles/storage.objectViewer"
 bucket_entity = "allUsers"
 
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> c8d8fa719568955644560262f5507d13e9b512e2
 
 # Feature Group
 #################################################
@@ -207,11 +211,19 @@ feature_group = {
   fg_entity_id_columns = "feature_id"
 }
 
+<<<<<<< HEAD
 
 # Feature Store
 #################################################
 feature_store = {
   name              = "tf_test_featurestore"
+=======
+ 
+# Feature Store  
+#################################################
+feature_store = {
+  name              = "tf_test_featurestore3"
+>>>>>>> c8d8fa719568955644560262f5507d13e9b512e2
   labels              = "bar"
   fixed_node_count       = 2
   force_destroy         = true
