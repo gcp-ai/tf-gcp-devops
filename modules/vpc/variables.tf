@@ -12,5 +12,5 @@ variable "create_count" {
 }
 variable "description" {
   type    = string
-  default = "TF vai-vpc"
+  default = "TF tf-vpc"
 }

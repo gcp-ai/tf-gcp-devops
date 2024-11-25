@@ -2,8 +2,6 @@
 meta_region  = "us-central1"
 meta_zone    = "us-central1-a"
 meta_sa_name = "dev1-sa"
-project      = "vai-tf"
-project_id   = "vai-tf"
 
 
 
@@ -31,7 +29,7 @@ googleapis = {
 #################################################
 
 serviceaccount = { 
-  sa_service_account_id   = "dev2-sa"
+  sa_service_account_id   = "tf-sa"
   display_name            = "SA for tf development"
 }
 
@@ -39,7 +37,7 @@ serviceaccount = {
 # VPC
 #################################################
 vpc = {
-  name                    = "vai-vpc"
+  name                    = "tf-vpc"
   routing_mode            = "GLOBAL"
   auto_create_subnetworks = true
 }
