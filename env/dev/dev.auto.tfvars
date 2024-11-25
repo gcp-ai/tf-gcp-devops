@@ -29,7 +29,7 @@ googleapis = {
 #################################################
 
 serviceaccount = { 
-  sa_service_account_id   = "tf-sa"
+  sa_service_account_id   = "dev2-sa"
   display_name            = "SA for tf development"
 }
 
