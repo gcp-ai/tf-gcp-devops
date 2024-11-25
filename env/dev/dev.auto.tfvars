@@ -161,7 +161,7 @@ workbench_member_role = "roles/notebooks.viewer"
 workbench_member      = "serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"
 
 
-# Workbench binding 
+# Workbench binding  
 #################################################
 workbench_binding_role    = "roles/viewer"
 workbench_binding_members = ["serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"]
