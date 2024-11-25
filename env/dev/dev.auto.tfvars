@@ -169,7 +169,7 @@ workbench_binding_members = ["serviceAccount:dev1-sa@gcp-automation-demo1.iam.gs
  
 # GCS
 #################################################
-gcs_buckets = [  
+gcs_buckets = [   
   {  
     bucket_name                 = "tf-ga-jobload"
     force_destroy               = true
