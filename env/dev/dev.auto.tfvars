@@ -189,7 +189,7 @@ gcs_buckets = [
 ] 
 
 
-# GCS Public
+# GCS Public 
 ################################################# 
 bucket_role   = "roles/storage.objectViewer"
 bucket_entity = "allUsers"
