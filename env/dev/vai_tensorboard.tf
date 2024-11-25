@@ -4,4 +4,8 @@ module "vai_tensorboard" {
   name = "tf-tensorboard"
   region = var.meta_region
 
+  depends_on = [
+    module.googleapis_aiplatform,
+  ]
+
 }

@@ -5,8 +5,11 @@ module "feature_group" {
   description      = var.feature_group.fg_description
   region           = var.meta_region
   label-one        = var.feature_group.fg_label_one
-  input_uri        = "bq://vai-kldmkr1.tf_job_load_dataset.job_load_table"
+  input_uri        = "bq://gcp-automation-demo1.tf_job_load_dataset.job_load_table"
   entity_id_column = var.feature_group.fg_entity_id_columns
   
-  depends_on       = [module.bigquery]
+  depends_on       = [
+    module.bigquery,
+    module.googleapis_aiplatform
+  ]
 }

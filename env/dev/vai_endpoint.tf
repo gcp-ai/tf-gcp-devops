@@ -4,4 +4,8 @@ module "vai_endpoint" {
   endpoint_name = var.endpoint_name
   location = var.meta_region
 
+  depends_on = [
+    module.googleapis_aiplatform,
+  ]
+
 }
