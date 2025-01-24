@@ -213,7 +213,6 @@ feature_store = {
   labels              = "bar"
   fixed_node_count       = 2
   force_destroy         = true
-
   name_fs_entitytype = "terraform"
   labels_fs_entitytype = "bar"
   description_fs_entitytype = "test description"
