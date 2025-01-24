@@ -185,6 +185,14 @@ gcs_buckets = [
     storage_class               = "STANDARD"
     retention_period            = 1
     versioning                  = false
+  },
+  {
+    bucket_name                 = "tf-jobload2"
+    force_destroy               = true
+    uniform_bucket_level_access = true
+    storage_class               = "STANDARD"
+    retention_period            = 1
+    versioning                  = false
   }
 ] 
 
