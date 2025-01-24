@@ -209,7 +209,7 @@ feature_group = {
 # Feature Store  
 ################################################
 feature_store = {
-  name              = "tf_test_featurestore3"
+  name              = "tf_test_featurestore"
   labels              = "bar"
   fixed_node_count       = 2
   force_destroy         = true
