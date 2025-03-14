@@ -34,6 +34,7 @@ serviceaccount = {
 }
 
 
+
 # VPC
 #################################################
 vpc = {
@@ -207,7 +208,7 @@ bucket_entity = "allUsers"
 # Feature Group
 #################################################
 feature_group = {
-  fg_name              = "tf_fgroup"
+  fg_name              = "tf_fgroup1"
   fg_description       = "Test description feature group"
   fg_label_one         = "value-one"
   fg_entity_id_columns = "feature_id"
@@ -217,7 +218,7 @@ feature_group = {
 # Feature Store  
 ################################################
 feature_store = {
-  name              = "tf_test_featurestore"
+  name              = "tf_test_featurestore1"
   labels              = "bar"
   fixed_node_count       = 2
   force_destroy         = true
