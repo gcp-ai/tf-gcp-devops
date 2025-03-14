@@ -5,7 +5,6 @@ meta_sa_name = "dev1-sa"
 
 
 
-
 # Googleapis variables
 ##################################################
 
