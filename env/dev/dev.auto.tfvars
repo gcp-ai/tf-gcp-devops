@@ -5,6 +5,7 @@ meta_sa_name = "dev1-sa"
 
 
 
+
 # Googleapis variables
 ##################################################
 
@@ -22,7 +23,6 @@ googleapis = {
   sqladmin             = "sqladmin.googleapis.com"
   iam                  = "iam.googleapis.com"
 }   
-
   
 
 # Service account variables
@@ -129,19 +129,19 @@ endpoint_name = "tf-endpoint"
 # EndPoint binding 
 #################################################
 endpoint_binding_role    = "roles/viewer"
-endpoint_binding_members = "serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"
+endpoint_binding_members = "serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"
 
 
 # EndPoint Member 
 #################################################
 endpoint_member_role = "roles/aiplatform.viewer"
-endpoint_member      = "serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"
+endpoint_member      = "serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"
 
 
 # EndPoint Policy 
 #################################################
 endpoint_policy_role    = "roles/viewer"
-endpoint_policy_members = ["serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"]
+endpoint_policy_members = ["serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"]
 
 
 # Metadata Store
@@ -152,19 +152,19 @@ metadata_name = "tf-metdata-store"
 # Workbench Policy 
 #################################################
 workbench_policy_role    = "roles/viewer"
-workbench_policy_members = ["serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"]
+workbench_policy_members = ["serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"]
 
 
 # Workbench Member 
 #################################################
 workbench_member_role = "roles/notebooks.viewer"
-workbench_member      = "serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"
+workbench_member      = "serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"
 
 
 # Workbench binding  
 #################################################
 workbench_binding_role    = "roles/viewer"
-workbench_binding_members = ["serviceAccount:dev1-sa@gcp-automation-demo2.iam.gserviceaccount.com"]
+workbench_binding_members = ["serviceAccount:dev1-sa@gcp-automation-demo1.iam.gserviceaccount.com"]
 
  
 # GCS
